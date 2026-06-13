@@ -44,7 +44,14 @@ function traiter(decodedText){
 
     })
 
-    .then(r=>r.json())
+.then(r=>{
+    console.log(r);
+    return r.text();
+})
+.then(t=>{
+    console.log(t);
+    alert(t);
+})
 
     .then(rep=>{
 
