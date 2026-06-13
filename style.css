@@ -1,0 +1,41 @@
+body{
+
+    font-family:Arial,sans-serif;
+
+    text-align:center;
+
+    background:#f4f4f4;
+
+    margin:20px;
+
+}
+
+h1{
+
+    color:#f26a21;
+
+}
+
+#reader{
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+#resultat{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    background:white;
+
+}
