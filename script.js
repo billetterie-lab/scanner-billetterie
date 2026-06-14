@@ -27,10 +27,18 @@ function traiter(decodedText){
 
     lecture=true;
 alert(decodedText);
-   fetch(
+   console.log("URL appelée :", API + "?uuid=" + encodeURIComponent(decodedText));
+
+fetch(
     API + "?uuid=" + encodeURIComponent(decodedText)
 )
+.catch(err => {
 
+    alert("ERREUR FETCH : " + err);
+
+    lecture = false;
+
+});
 .then(r => r.json())
 .then(rep => {
 
