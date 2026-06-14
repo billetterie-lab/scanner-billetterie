@@ -32,13 +32,7 @@ alert(decodedText);
 fetch(
     API + "?uuid=" + encodeURIComponent(decodedText)
 )
-.catch(err => {
 
-    alert("ERREUR FETCH : " + err);
-
-    lecture = false;
-
-});
 .then(r => r.json())
 .then(rep => {
 
@@ -99,7 +93,13 @@ ${rep.heure}<br><br>
         setTimeout(retour,2000);
 
     });
+.catch(err => {
 
+    alert("ERREUR FETCH : " + err);
+
+    lecture = false;
+
+});
 }
 
 scanner=new Html5QrcodeScanner(
