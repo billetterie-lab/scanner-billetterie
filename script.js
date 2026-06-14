@@ -1,121 +1,143 @@
-const API =
-"https://script.google.com/macros/s/AKfycbx6DFYvy6hKWB3SZzjd4dXo055b1HsqL6i3OtmQd9dcbz8-VgxaZT9vEeKvBATJQYRZfA/exec";
+const API = "https://script.google.com/macros/s/AKfycbx6DFYvy6hKWB3SZzjd4dXo055b1HsqL6i3OtmQd9dcbz8-VgxaZT9vEeKvBATJQYRZfA/exec";
+
 let scanner;
+let lecture = false;
 
-let lecture=false;
+function afficher(message, couleur) {
 
-function afficher(msg,couleur){
-
-    document.body.style.background=couleur;
-
-    document.getElementById("resultat").innerHTML=msg;
-}
-
-function retour(){
-
-    document.body.style.background="#f4f4f4";
-
-    document.getElementById("resultat").innerHTML="Prêt à scanner...";
-
-    lecture=false;
+    document.body.style.backgroundColor = couleur;
+    document.getElementById("resultat").innerHTML = message;
 
 }
 
-function traiter(decodedText){
+function retourScanner() {
 
-    if(lecture)return;
-
-    lecture=true;
-alert(decodedText);
-   console.log("URL appelée :", API + "?uuid=" + encodeURIComponent(decodedText));
-
-fetch(
-    API + "?uuid=" + encodeURIComponent(decodedText)
-)
-
-.then(r => r.json())
-.then(rep => {
-
-    alert(JSON.stringify(rep));
-    
-        if(navigator.vibrate){
-
-            navigator.vibrate(150);
-
-        }
-
-        if(rep.statut=="OK"){
-
-            afficher(
-
-`<h2>✅ ENTRÉE AUTORISÉE</h2>
-
-<b>${rep.prenom} ${rep.nom}</b><br><br>
-
-Tarif : ${rep.tarif}<br>
-
-Billet : ${rep.billet}<br><br>
-
-🎫 ${rep.controles} / ${rep.total} billets contrôlés`,
-
-"#27ae60");
-
-        }
-
-        else if(rep.statut=="DEJA"){
-
-            afficher(
-
-`<h2>❌ BILLET DÉJÀ UTILISÉ</h2>
-
-<b>${rep.prenom} ${rep.nom}</b><br><br>
-
-Déjà validé<br>
-
-${rep.heure}<br><br>
-
-🎫 ${rep.controles} / ${rep.total}`,
-
-"#c0392b");
-
-        }
-
-        else{
-
-            afficher(
-
-"<h2>❌ QR CODE INCONNU</h2>",
-
-"#8e0000");
-
-        }
-
-        setTimeout(retour,2000);
-
-    })
-.catch(err => {
-
-    alert("ERREUR FETCH : " + err);
-
+    document.body.style.backgroundColor = "#f4f4f4";
+    document.getElementById("resultat").innerHTML = "Prêt à scanner...";
     lecture = false;
 
-});
 }
 
-scanner=new Html5QrcodeScanner(
+async function traiter(decodedText) {
 
-"reader",
+    if (lecture) return;
 
-{
+    lecture = true;
 
-fps:10,
+    // Si le QR contient une URL complète, on récupère seulement l'UUID
+    if (decodedText.includes("uuid=")) {
 
-qrbox:250,
+        decodedText = decodedText.split("uuid=")[1];
 
-rememberLastUsedCamera:true
+    }
+
+    try {
+
+        const response = await fetch(
+            API + "?uuid=" + encodeURIComponent(decodedText)
+        );
+
+        const rep = await response.json();
+
+        if (navigator.vibrate) {
+            navigator.vibrate(150);
+        }
+
+        if (rep.statut === "OK") {
+
+            afficher(`
+                <h2>✅ ENTRÉE AUTORISÉE</h2>
+
+                <h3>${rep.prenom} ${rep.nom}</h3>
+
+                <p>🎟 Billet : ${rep.billet}</p>
+
+                <p>💶 Tarif : ${rep.tarif}</p>
+
+                <hr>
+
+                <h2>🎫 ${rep.controles} / ${rep.total}</h2>
+
+                <p>billets contrôlés</p>
+
+            `, "#27ae60");
+
+        }
+
+        else if (rep.statut === "DEJA") {
+
+            afficher(`
+                <h2>❌ BILLET DÉJÀ UTILISÉ</h2>
+
+                <h3>${rep.prenom} ${rep.nom}</h3>
+
+                <p>${rep.billet}</p>
+
+                <p>Déjà validé :</p>
+
+                <p>${rep.heure}</p>
+
+                <hr>
+
+                <h2>${rep.controles} / ${rep.total}</h2>
+
+            `, "#c0392b");
+
+        }
+
+        else {
+
+            afficher(`
+                <h2>❌ QR CODE INCONNU</h2>
+
+                <hr>
+
+                <h2>${rep.controles} / ${rep.total}</h2>
+
+            `, "#8e0000");
+
+        }
+
+    }
+
+    catch (err) {
+
+        afficher(
+
+            "<h2>⚠️ Erreur de communication</h2><br>" + err,
+
+            "#555555"
+
+        );
+
+    }
+
+    setTimeout(retourScanner, 2500);
 
 }
 
-);
+window.onload = function () {
 
-scanner.render(traiter);
+    scanner = new Html5QrcodeScanner(
+
+        "reader",
+
+        {
+
+            fps: 10,
+
+            qrbox: 250,
+
+            rememberLastUsedCamera: true,
+
+            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
+
+        },
+
+        false
+
+    );
+
+    scanner.render(traiter);
+
+};
