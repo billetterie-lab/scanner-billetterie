@@ -7,7 +7,6 @@ function afficher(message, couleur) {
 
     document.body.style.backgroundColor = couleur;
     document.getElementById("resultat").innerHTML = message;
-   
     scanner.pause(true);
 }
 
