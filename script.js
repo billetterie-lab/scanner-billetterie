@@ -50,6 +50,11 @@ const response = await fetch(
         }
 
         if (rep.statut === "OK") {
+    setTimeout(retourScanner, 2000);
+} else {
+    setTimeout(retourScanner, 4000);
+} 
+        {
 
             afficher(`
                 <h2>✅ ENTRÉE AUTORISÉE</h2>
