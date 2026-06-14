@@ -130,7 +130,7 @@ window.onload = function () {
 
             fps: 10,
 
-            qrbox: 250,
+            qrbox: 160,
 
             rememberLastUsedCamera: true,
 
