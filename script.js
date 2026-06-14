@@ -33,10 +33,14 @@ async function traiter(decodedText) {
 
     try {
 
-        const response = await fetch(
-            API + "?uuid=" + encodeURIComponent(decodedText)
-        );
-
+const response = await fetch(
+    API + "?uuid=" + encodeURIComponent(decodedText),
+    {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache"
+    }
+);
         const rep = await response.json();
 
         if (navigator.vibrate) {
