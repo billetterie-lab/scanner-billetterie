@@ -1,38 +1,47 @@
 body{
-
-    font-family:Arial,sans-serif;
-
-    text-align:center;
-
-    background:#f4f4f4;
-
-    margin:20px;
-
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
 }
 
 h1{
-
+ font-size: 24px;
+    margin: 8px;
     color:#f26a21;
-
 }
 
 #reader{
 
-    max-width:500px;
+    max-width:220px;
 
     margin:auto;
 
 }
+h2{
+    font-size: 26px;
+    margin: 8px;
+}
+
+h3{
+    font-size: 20px;
+    margin: 6px;
+}
+
+p{
+    font-size: 18px;
+    margin: 4px;
+}
 
 #resultat{
 
-    margin-top:20px;
+    margin-top:10px;
 
     padding:20px;
 
     border-radius:12px;
 
-    font-size:28px;
+    font-size:20px;
 
     font-weight:bold;
 
@@ -41,11 +50,11 @@ h1{
 }
 #compteur{
 
-    font-size:24px;
+    font-size:22px;
 
     font-weight:bold;
 
-    margin-bottom:20px;
+    margin-bottom:10px;
 
     color:#f26a21;
 
