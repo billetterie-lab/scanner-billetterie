@@ -121,8 +121,7 @@ else {
 
     }
 
-    setTimeout(retourScanner, 2500);
-
+    
 }
 
 window.onload = function () {
