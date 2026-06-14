@@ -1,6 +1,5 @@
 const API =
-"https://script.google.com/macros/s/AKfycbwxWLrSlgT1TJWZU-iS3N9mhYx1qzk-JxtOidgRznBJhEvZfgui6ROu4cott6Ffcz7hFQ/exec";
-
+"https://script.google.com/macros/s/AKfycbx6DFYvy6hKWB3SZzjd4dXo055b1HsqL6i3OtmQd9dcbz8-VgxaZT9vEeKvBATJQYRZfA/exec";
 let scanner;
 
 let lecture=false;
