@@ -50,65 +50,62 @@ const response = await fetch(
             navigator.vibrate(150);
         }
 
-        if (rep.statut === "OK") {
+if (rep.statut === "OK") {
+
+    afficher(`
+        <h2>✅ ENTRÉE AUTORISÉE</h2>
+
+        <h3>${rep.prenom} ${rep.nom}</h3>
+
+        <p>🎟 Billet : ${rep.billet}</p>
+
+        <p>💶 Tarif : ${rep.tarif}</p>
+
+        <hr>
+
+        <h2>🎫 ${rep.controles} / ${rep.total}</h2>
+
+    `, "#27ae60");
+
     setTimeout(retourScanner, 2000);
-} else {
+
+}
+else if (rep.statut === "DEJA") {
+
+    afficher(`
+        <h2>❌ BILLET DÉJÀ UTILISÉ</h2>
+
+        <h3>${rep.prenom} ${rep.nom}</h3>
+
+        <p>${rep.billet}</p>
+
+        <p>Déjà validé :</p>
+
+        <p>${rep.heure}</p>
+
+        <hr>
+
+        <h2>${rep.controles} / ${rep.total}</h2>
+
+    `, "#c0392b");
+
     setTimeout(retourScanner, 4000);
-} 
-        {
 
-            afficher(`
-                <h2>✅ ENTRÉE AUTORISÉE</h2>
+}
+else {
 
-                <h3>${rep.prenom} ${rep.nom}</h3>
+    afficher(`
+        <h2>❌ QR CODE INCONNU</h2>
 
-                <p>🎟 Billet : ${rep.billet}</p>
+        <hr>
 
-                <p>💶 Tarif : ${rep.tarif}</p>
+        <h2>${rep.controles} / ${rep.total}</h2>
 
-                <hr>
+    `, "#8e0000");
 
-                <h2>🎫 ${rep.controles} / ${rep.total}</h2>
+    setTimeout(retourScanner, 4000);
 
-                <p>billets contrôlés</p>
-
-            `, "#27ae60");
-
-        }
-
-        else if (rep.statut === "DEJA") {
-
-            afficher(`
-                <h2>❌ BILLET DÉJÀ UTILISÉ</h2>
-
-                <h3>${rep.prenom} ${rep.nom}</h3>
-
-                <p>${rep.billet}</p>
-
-                <p>Déjà validé :</p>
-
-                <p>${rep.heure}</p>
-
-                <hr>
-
-                <h2>${rep.controles} / ${rep.total}</h2>
-
-            `, "#c0392b");
-
-        }
-
-        else {
-
-            afficher(`
-                <h2>❌ QR CODE INCONNU</h2>
-
-                <hr>
-
-                <h2>${rep.controles} / ${rep.total}</h2>
-
-            `, "#8e0000");
-
-        }
+}
 
     }
 
