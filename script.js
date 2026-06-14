@@ -27,7 +27,7 @@ function traiter(decodedText){
     if(lecture)return;
 
     lecture=true;
-
+alert(decodedText);
    fetch(
     API + "?uuid=" + encodeURIComponent(decodedText)
 )
