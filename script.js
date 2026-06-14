@@ -34,6 +34,8 @@ alert(decodedText);
 .then(r => r.json())
 .then(rep => {
 
+    alert(JSON.stringify(rep));
+    
         if(navigator.vibrate){
 
             navigator.vibrate(150);
