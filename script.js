@@ -92,7 +92,7 @@ ${rep.heure}<br><br>
 
         setTimeout(retour,2000);
 
-    });
+    })
 .catch(err => {
 
     alert("ERREUR FETCH : " + err);
