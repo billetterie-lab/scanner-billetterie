@@ -7,8 +7,7 @@ function afficher(message, couleur) {
 
     document.body.style.backgroundColor = couleur;
     document.getElementById("resultat").innerHTML = message;
-    document.getElementById("compteur").innerHTML =
-    "🎫 Contrôlés : " + rep.controles + " / " + rep.total;
+   
     scanner.pause(true);
 }
 
@@ -44,7 +43,10 @@ const response = await fetch(
     }
 );
         const rep = await response.json();
-
+    // Mise à jour du compteur
+        document.getElementById("compteur").innerHTML =
+        "🎫 Contrôlés : " + rep.controles + " / " + rep.total;
+        
         if (navigator.vibrate) {
             navigator.vibrate(150);
         }
