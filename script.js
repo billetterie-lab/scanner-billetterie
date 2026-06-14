@@ -28,21 +28,9 @@ function traiter(decodedText){
 
     lecture=true;
 
-    fetch(API,{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
-        },
-
-        body:JSON.stringify({
-
-            uuid:decodedText
-
-        })
-
-    })
+   fetch(
+    API + "?uuid=" + encodeURIComponent(decodedText)
+)
 
 .then(r => r.json())
 .then(rep => {
