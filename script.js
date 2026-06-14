@@ -7,6 +7,8 @@ function afficher(message, couleur) {
 
     document.body.style.backgroundColor = couleur;
     document.getElementById("resultat").innerHTML = message;
+    document.getElementById("compteur").innerHTML =
+    "🎫 Contrôlés : " + rep.controles + " / " + rep.total;
     scanner.pause(true);
 }
 
