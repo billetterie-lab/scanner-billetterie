@@ -60,16 +60,12 @@ const response = await fetch(
 if (rep.statut === "OK") {
 
     afficher(`
-        <h2>✅ ENTRÉE AUTORISÉE</h2>
+    <h2>✅ ENTRÉE AUTORISÉE</h2>
 
-        <h3>${rep.prenom} ${rep.nom}</h3>
+    <h3>${rep.prenom} ${rep.nom}</h3>
 
-        <p>🎟 Billet : ${rep.billet}</p>
-
-        <p>💶 Tarif : ${rep.tarif}</p>
-
-        
-    `, "#27ae60");
+    <p>${rep.billet} • ${rep.tarif}</p>
+`, "#27ae60");
 
     setTimeout(retourScanner, 2000);
 
