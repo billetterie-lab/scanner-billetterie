@@ -136,7 +136,7 @@ window.onload = function () {
 
         {
 
-            fps: 10,
+            fps: 8,
 
             qrbox: 160,
 
