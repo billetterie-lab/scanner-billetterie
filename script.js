@@ -50,8 +50,8 @@ const response = await fetch(
         const rep = await response.json();
         const restants = rep.total - rep.controles;
     // Mise à jour du compteur
-        document.getElementById("compteur").innerHTML =
-    `🎫 ${rep.controles} / ${rep.total} &nbsp;&nbsp;&nbsp; 🎟 Restants : ${restants}`;
+    document.getElementById("compteur").innerHTML =
+    `🎫 ${rep.controles}/${rep.total} | 🎟 ${restants}`;
         
         if (navigator.vibrate) {
             navigator.vibrate(150);
