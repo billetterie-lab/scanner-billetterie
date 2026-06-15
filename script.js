@@ -130,23 +130,12 @@ else {
 window.onload = function () {
 
     scanner = new Html5QrcodeScanner(
-
         "reader",
-
         {
-
             fps: 8,
-
             qrbox: 160,
-
-            rememberLastUsedCamera: true,
-
-            supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA]
-
-        },
-
-        false
-
+            rememberLastUsedCamera: true
+        }
     );
 
     scanner.render(traiter);
