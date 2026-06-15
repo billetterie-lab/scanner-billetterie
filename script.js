@@ -46,9 +46,10 @@ const response = await fetch(
     }
 );
         const rep = await response.json();
+        const restants = rep.total - rep.controles;
     // Mise à jour du compteur
         document.getElementById("compteur").innerHTML =
-        "🎫 Contrôlés : " + rep.controles + " / " + rep.total;
+        `🎫 ${rep.controles} / ${rep.total} &nbsp;&nbsp;•&nbsp;&nbsp; 🎟 ${restants} restants`;
         
         if (navigator.vibrate) {
             navigator.vibrate(150);
