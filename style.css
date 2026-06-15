@@ -1,74 +1,178 @@
-body{
-    margin:0;
-    padding:8px;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    background:#f4f4f4;
+/* ========================= */
+/* APAS Scanner V1.0         */
+/* ========================= */
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f4f4;
+
+    text-align: center;
+
 }
 
-h1{
-    margin:5px;
-    font-size:28px;
-    color:#f26a21;
+.container {
+
+    max-width: 420px;
+
+    margin: auto;
+
+    padding: 10px;
+
 }
 
-#evenement{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:8px;
+h1 {
+
+    margin: 5px 0;
+
+    color: #f26a21;
+
+    font-size: 30px;
+
 }
 
-#compteur{
-    font-size:22px;
-    font-weight:bold;
-    color:#f26a21;
-    margin-bottom:10px;
+h2 {
+
+    margin: 5px 0 10px 0;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
 }
 
-#reader{
-    width:220px;
-    margin:auto;
+#compteur {
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #333;
+
 }
 
-#resultat{
-    margin-top:12px;
-    background:white;
-    border-radius:15px;
-    padding:12px;
-    font-size:20px;
-    min-height:180px;
+#reader {
+
+    width: 240px;
+
+    margin: auto;
+
 }
 
-h2{
-    margin:6px;
-    font-size:32px;
+#resultat {
+
+    margin-top: 15px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    min-height: 140px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #222;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+
 }
 
-h3{
-    margin:6px;
-    font-size:24px;
+#version {
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    color: #888;
+
 }
 
-p{
-    margin:4px;
-    font-size:20px;
+/* ----------------------- */
+/* Html5Qrcode             */
+/* ----------------------- */
+
+#reader__dashboard_section_swaplink {
+
+    display: none !important;
+
 }
 
-hr{
-    margin:10px;
+#reader__dashboard_section_csr {
+
+    display: none !important;
+
 }
 
-/* Suppression des éléments inutiles */
+#reader__dashboard_section_fsr {
 
-#reader__dashboard_section_swaplink,
-#reader__dashboard_section_csr,
-#reader__dashboard_section_fsr,
-#reader__status_span{
-    display:none !important;
+    display: none !important;
+
 }
 
-/* On masque aussi le texte "Scanner paused" */
+#reader__status_span {
 
-#reader__scan_region > div:nth-child(2){
-    display:none !important;
+    display: none !important;
+
+}
+
+#reader video {
+
+    border-radius: 10px;
+
+}
+
+/* ----------------------- */
+/* Smartphones             */
+/* ----------------------- */
+
+@media (max-width:600px){
+
+    h1{
+
+        font-size:26px;
+
+    }
+
+    h2{
+
+        font-size:20px;
+
+    }
+
+    #compteur{
+
+        font-size:20px;
+
+    }
+
+    #reader{
+
+        width:220px;
+
+    }
+
+    #resultat{
+
+        font-size:18px;
+
+        min-height:120px;
+
+    }
+
 }
