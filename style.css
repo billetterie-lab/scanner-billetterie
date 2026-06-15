@@ -128,34 +128,31 @@ h2 {
 
     h1{
 
-        font-size:26px;
+        font-size:24px;
 
     }
 
     h2{
 
-        font-size:20px;
+        font-size:18px;
 
     }
 
-    #compteur{
-
-        font-size:20px;
-
+    #compteur {
+    font-size: 18px;
+    padding: 6px;
     }
 
     #reader{
 
-        width:220px;
+        width:180px;
 
     }
 
-    #resultat{
-
-        font-size:18px;
-
-        min-height:120px;
-
+    #resultat {
+    font-size: 17px;
+    padding: 10px;
+    min-height: 110px;
     }
 
 }
