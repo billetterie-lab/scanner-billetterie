@@ -90,8 +90,7 @@ else if (rep.statut === "DEJA") {
 
         <hr>
 
-        <h2>${rep.controles} / ${rep.total}</h2>
-
+   
     `, "#c0392b");
 
     setTimeout(retourScanner, 4000);
