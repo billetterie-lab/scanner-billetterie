@@ -7,6 +7,7 @@ function afficher(message, couleur) {
 
     document.body.style.backgroundColor = couleur;
     document.getElementById("resultat").innerHTML = message;
+    // scanner.pause(true);
     if (scanner.pause) {
     scanner.pause(true);
 }
@@ -17,7 +18,8 @@ function retourScanner() {
     document.body.style.backgroundColor = "#f4f4f4";
     document.getElementById("resultat").innerHTML = "Prêt à scanner...";
     lecture = false;
-   if (scanner.resume) {
+   // scanner.resume();
+    if (scanner.resume) {
     scanner.resume();
 };
 }
