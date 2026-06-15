@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbx6DFYvy6hKWB3SZzjd4dXo055b1HsqL6i3OtmQd9dcbz8-VgxaZT9vEeKvBATJQYRZfA/exec";
+const API = "https://script.google.com/macros/s/AKfycbx9ZLgwHKffoCSGxKNG99RUY_VzzLHMunirej7n740gpu4imePu4omzFQQY_ax7uenk/exec";
 
 let scanner;
 let lecture = false;
