@@ -4,7 +4,11 @@ body{
     padding: 10px;
     margin: 0;
 }
-
+#reader__scan_region img,
+#reader__dashboard_section_csr,
+#reader__dashboard_section_swaplink {
+    display: none !important;
+}
 h1{
  font-size: 24px;
     margin: 8px;
