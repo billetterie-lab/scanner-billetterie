@@ -1,5 +1,13 @@
 const API = "https://script.google.com/macros/s/AKfycbx9ZLgwHKffoCSGxKNG99RUY_VzzLHMunirej7n740gpu4imePu4omzFQQY_ax7uenk/exec";
 
+fetch(API + "?info=event")
+.then(r => r.json())
+.then(rep => {
+
+    document.getElementById("evenement").innerHTML =
+        rep.evenement;
+
+});
 let scanner;
 let lecture = false;
 
