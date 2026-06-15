@@ -1,65 +1,74 @@
 body{
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 10px;
-    margin: 0;
+    margin:0;
+    padding:8px;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    background:#f4f4f4;
 }
-#reader__scan_region img,
-#reader__dashboard_section_csr,
-#reader__dashboard_section_swaplink {
-    display: none !important;
-}
+
 h1{
- font-size: 24px;
-    margin: 8px;
+    margin:5px;
+    font-size:28px;
     color:#f26a21;
+}
+
+#evenement{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+#compteur{
+    font-size:22px;
+    font-weight:bold;
+    color:#f26a21;
+    margin-bottom:10px;
 }
 
 #reader{
-
-    max-width:220px;
-
+    width:220px;
     margin:auto;
-
-}
-h2{
-    font-size: 26px;
-    margin: 8px;
-}
-
-h3{
-    font-size: 20px;
-    margin: 6px;
-}
-
-p{
-    font-size: 18px;
-    margin: 4px;
 }
 
 #resultat{
-
-    margin-top:10px;
-
-    padding:20px;
-
-    border-radius:12px;
-
-    font-size:20px;
-
-    font-weight:bold;
-
+    margin-top:12px;
     background:white;
-
+    border-radius:15px;
+    padding:12px;
+    font-size:20px;
+    min-height:180px;
 }
-#compteur{
 
-    font-size:22px;
+h2{
+    margin:6px;
+    font-size:32px;
+}
 
-    font-weight:bold;
+h3{
+    margin:6px;
+    font-size:24px;
+}
 
-    margin-bottom:10px;
+p{
+    margin:4px;
+    font-size:20px;
+}
 
-    color:#f26a21;
+hr{
+    margin:10px;
+}
 
+/* Suppression des éléments inutiles */
+
+#reader__dashboard_section_swaplink,
+#reader__dashboard_section_csr,
+#reader__dashboard_section_fsr,
+#reader__status_span{
+    display:none !important;
+}
+
+/* On masque aussi le texte "Scanner paused" */
+
+#reader__scan_region > div:nth-child(2){
+    display:none !important;
 }
