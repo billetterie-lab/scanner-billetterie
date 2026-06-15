@@ -65,10 +65,7 @@ if (rep.statut === "OK") {
 
         <p>💶 Tarif : ${rep.tarif}</p>
 
-        <hr>
-
-        <h2>🎫 ${rep.controles} / ${rep.total}</h2>
-
+        
     `, "#27ae60");
 
     setTimeout(retourScanner, 2000);
