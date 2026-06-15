@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contrôle Billets APAS</title>
+    <title>Contrôle d'accès APAS</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 
 </head>
 
 <body>
 
-<h1>🎟 Contrôle d'accès APAS </h1>
-<h2 id="evenement"></h2>  
-<div id="compteur">
-🎫 Contrôlés : 0 / 0
-</div>
-<div id="reader"></div>
+    <div class="container">
 
-<div id="resultat">
+        <h1>🎟 APAS MUSIQUE</h1>
 
-Prêt à scanner...
+        <h2 id="evenement">Contrôle d'accès</h2>
 
-</div>
+        <div id="compteur">
 
-<script src="script.js"></script>
+            🎫 Entrées : -- / --<br>
+            🎟 Restants : --
+
+        </div>
+
+        <div id="reader"></div>
+
+        <div id="resultat">
+
+            Prêt à scanner...
+
+        </div>
+
+        <div id="version">
+
+            Version 1.0
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 
