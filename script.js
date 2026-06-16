@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbx9ZLgwHKffoCSGxKNG99RUY_VzzLHMunirej7n740gpu4imePu4omzFQQY_ax7uenk/exec";
+const API = "https://script.google.com/macros/s/AKfycbzbcipxMVgWTj8YBYp5g9em1Hrl83wuIfX5bNxN1O5Mu_XknIZ1Jvy7DNg4XlhkU6MX/exec";
 
 fetch(API + "?info=event")
 .then(r => r.json())
