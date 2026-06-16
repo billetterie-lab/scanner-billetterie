@@ -132,7 +132,18 @@ else {
 }
 
 window.onload = function () {
+fetch(API + "?info=compteurs")
 
+.then(r => r.json())
+
+.then(rep => {
+
+    const restants = rep.total - rep.controles;
+
+    document.getElementById("compteur").innerHTML =
+        `🎫 ${rep.controles}/${rep.total} | 🎟 ${restants}`;
+
+});
     scanner = new Html5QrcodeScanner(
         "reader",
         {
